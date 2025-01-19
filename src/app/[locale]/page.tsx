@@ -1,9 +1,9 @@
 import { useTranslations } from "next-intl"
 
 const HomePage = () => {
-  const t = useTranslations('HomePage')
+  const t = useTranslations('navbar')
   return (
-    <div>{t('title')}</div>
+    <div>{t('home')}</div>
   )
 }
 
