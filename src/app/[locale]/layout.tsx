@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 
@@ -18,17 +20,25 @@ export const metadata: Metadata = {
     'A frontend challenge for Digifly marketing agency contains a form and a list of users, a leaflet map, and a rich text editor.',
 }
 
-export default function RootLayout({
+// Providing all messages to the client
+// side is the easiest way to get started
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params: { locale },
+}: {
   children: React.ReactNode
-}>) {
+  params: { locale: string }
+}) {
+  const messages = await getMessages()
+
   return (
-    <html lang='en'>
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   )
