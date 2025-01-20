@@ -9,27 +9,12 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { userSchema } from '@/schema'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { useUserInformation } from '@/hooks/useUserInformation'
 import { useTranslations } from 'next-intl'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 
 const UserForm = () => {
   const t = useTranslations('form')
-  const form = useForm<z.infer<typeof userSchema>>({
-    resolver: zodResolver(userSchema),
-    defaultValues: {
-      firstname: '',
-      lastname: '',
-      mobileNumber: '',
-      email: '',
-    },
-  })
-
-  const onSubmit = (value: z.infer<typeof userSchema>) => {
-    console.log(value)
-  }
+  const { form, onSubmit } = useUserInformation()
 
   return (
     <div className='w-full'>
@@ -48,7 +33,7 @@ const UserForm = () => {
           <div className='flex flex-col lg:flex-row gap-8'>
             <FormField
               control={form.control}
-              name='firstname'
+              name='FirstName'
               render={({ field }) => (
                 <FormItem className='flex-1'>
                   <FormLabel
@@ -63,19 +48,19 @@ const UserForm = () => {
                       placeholder={t('firstName')}
                       {...field}
                       className='bg-white lg:py-6 py-5 ps-6 rounded-[2px]'
-                      aria-invalid={!!form.formState.errors.firstname}
+                      aria-invalid={!!form.formState.errors.FirstName}
                       aria-describedby='firstname-error'
                     />
                   </FormControl>
                   <FormMessage id='firstname-error'>
-                    {form.formState.errors.firstname?.message}
+                    {form.formState.errors.FirstName?.message}
                   </FormMessage>
                 </FormItem>
               )}
             />
             <FormField
               control={form.control}
-              name='lastname'
+              name='LastName'
               render={({ field }) => (
                 <FormItem className='flex-1'>
                   <FormLabel
@@ -90,12 +75,12 @@ const UserForm = () => {
                       placeholder={t('lastName')}
                       {...field}
                       className='bg-white lg:py-6 py-5 ps-6 rounded-[2px]'
-                      aria-invalid={!!form.formState.errors.lastname}
+                      aria-invalid={!!form.formState.errors.LastName}
                       aria-describedby='lastname-error'
                     />
                   </FormControl>
                   <FormMessage id='lastname-error'>
-                    {form.formState.errors.lastname?.message}
+                    {form.formState.errors.LastName?.message}
                   </FormMessage>
                 </FormItem>
               )}
@@ -103,7 +88,7 @@ const UserForm = () => {
           </div>
           <FormField
             control={form.control}
-            name='mobileNumber'
+            name='Phone'
             render={({ field }) => (
               <FormItem>
                 <FormLabel
@@ -118,19 +103,19 @@ const UserForm = () => {
                     placeholder={t('mobileNumber')}
                     {...field}
                     className='bg-white lg:py-6 py-5 ps-6 rounded-[2px]'
-                    aria-invalid={!!form.formState.errors.mobileNumber}
+                    aria-invalid={!!form.formState.errors.Phone}
                     aria-describedby='mobileNumber-error'
                   />
                 </FormControl>
                 <FormMessage id='mobileNumber-error'>
-                  {form.formState.errors.mobileNumber?.message}
+                  {form.formState.errors.Phone?.message}
                 </FormMessage>
               </FormItem>
             )}
           />
           <FormField
             control={form.control}
-            name='email'
+            name='Email'
             render={({ field }) => (
               <FormItem>
                 <FormLabel
@@ -145,12 +130,12 @@ const UserForm = () => {
                     placeholder={t('email')}
                     {...field}
                     className='bg-white lg:py-6 py-5 ps-6 rounded-[2px]'
-                    aria-invalid={!!form.formState.errors.email}
+                    aria-invalid={!!form.formState.errors.Email}
                     aria-describedby='email-error'
                   />
                 </FormControl>
                 <FormMessage id='email-error'>
-                  {form.formState.errors.email?.message}
+                  {form.formState.errors.Email?.message}
                 </FormMessage>
               </FormItem>
             )}
@@ -158,9 +143,16 @@ const UserForm = () => {
           <Button
             type='submit'
             className='w-full py-2.5'
-            aria-label={t('button')}
+            aria-label={t('button.send')}
           >
-            {t('button')}
+            {form.formState.isSubmitting ? (
+              <div className='flex gap-3'>
+                {t('button.sending')}
+                <div className='animate-spin rounded-full h-5 w-5 border-b-2 border-white'></div>
+              </div>
+            ) : (
+              t('button.send')
+            )}
           </Button>
         </form>
       </Form>
