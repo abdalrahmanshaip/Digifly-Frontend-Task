@@ -22,15 +22,35 @@ const SwitchLanguage = () => {
     <Select
       defaultValue={lang}
       onValueChange={(value) => switchLang(value)}
+      aria-label='Select Language'
     >
-      <SelectTrigger className='w-[180px]'>
-        <SelectValue placeholder='Select language' />
+      <SelectTrigger
+        className='w-[180px]'
+        aria-label='Language Selector'
+      >
+        <SelectValue />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Language</SelectLabel>
-          <SelectItem value='en'>En</SelectItem>
-          <SelectItem value='ar'>العربية</SelectItem>
+          <SelectLabel aria-label=''>Language</SelectLabel>
+          <SelectItem
+            title='Language Selector'
+            key='en'
+            role='option'
+            aria-label='Switch to English Language'
+            value='en'
+          >
+            En
+          </SelectItem>
+          <SelectItem
+            title='Language Selector'
+            key='ar'
+            role='option'
+            aria-label='Switch to Arabic Language'
+            value='ar'
+          >
+            العربية
+          </SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
