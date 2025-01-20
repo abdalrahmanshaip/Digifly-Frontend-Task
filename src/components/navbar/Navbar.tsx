@@ -1,4 +1,4 @@
-import SwitchLanguage from "./_components/SwitchLanguage"
+import SwitchLanguage from './_components/SwitchLanguage'
 
 const Navbar = () => {
   return (
