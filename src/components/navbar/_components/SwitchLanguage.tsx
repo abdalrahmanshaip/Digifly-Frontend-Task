@@ -4,9 +4,8 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from '@/components/ui/select'
 import { useLocale } from 'next-intl'
 import { useRouter } from 'next/navigation'
@@ -32,7 +31,6 @@ const SwitchLanguage = () => {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel aria-label=''>Language</SelectLabel>
           <SelectItem
             title='Language Selector'
             key='en'
