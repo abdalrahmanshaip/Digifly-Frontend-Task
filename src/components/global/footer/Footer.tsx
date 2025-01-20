@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl'
 const Footer = () => {
   const t = useTranslations('footer')
   return (
-    <div className='bg-our-purple py-10 text-our-white text-center'>
+    <div className='bg-our-purple py-8 text-our-white text-center' aria-description='Copy Right Digifly'>
       {t('title')}
     </div>
   )
