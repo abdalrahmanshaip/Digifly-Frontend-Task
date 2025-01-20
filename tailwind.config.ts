@@ -66,6 +66,7 @@ export default {
         },
         'our-white': {
           DEFAULT: '#FFFFFF99',
+          100: '#E5E5E5'
         },
       },
       borderRadius: {

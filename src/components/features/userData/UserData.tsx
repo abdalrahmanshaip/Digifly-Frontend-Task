@@ -5,7 +5,7 @@ import UserForm from "./_components/UserForm"
 const UserData = () => {
   const t = useTranslations('contentOne')
   return (
-    <div className='py-16'>
+    <div className='py-16 space-y-20'>
       <HeaderSections headerTitle={t('title')} paragraph={t('paragraph')}/>
       <UserForm />
     </div>
