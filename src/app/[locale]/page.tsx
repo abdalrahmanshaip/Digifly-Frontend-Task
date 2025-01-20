@@ -1,8 +1,8 @@
-import { useTranslations } from 'next-intl'
 
 const HomePage = () => {
-  const t = useTranslations('navbar')
-  return <div>{t('home')}</div>
+  return (
+    <div>Home Page</div>
+  )
 }
 
 export default HomePage
