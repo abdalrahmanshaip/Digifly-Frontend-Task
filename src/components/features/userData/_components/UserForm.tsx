@@ -34,9 +34,9 @@ const UserForm = () => {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className='space-y-8'
+          className='lg:space-y-8 space-y-6'
         >
-          <div className='flex gap-x-8 '>
+          <div className='flex flex-col lg:flex-row  gap-8 '>
             <FormField
               control={form.control}
               name='firstname'
@@ -49,7 +49,7 @@ const UserForm = () => {
                     <Input
                       placeholder={t('firstName')}
                       {...field}
-                      className='bg-white py-6 ps-6 rounded-[2px] '
+                      className='bg-white lg:py-6 py-5 ps-6 rounded-[2px] '
                     />
                   </FormControl>
                   <FormMessage />
@@ -68,7 +68,7 @@ const UserForm = () => {
                     <Input
                       placeholder={t('lastName')}
                       {...field}
-                      className='bg-white py-6 ps-6 rounded-[2px]'
+                      className='bg-white lg:py-6 py-5 ps-6 rounded-[2px]'
                     />
                   </FormControl>
                   <FormMessage />
@@ -88,7 +88,7 @@ const UserForm = () => {
                   <Input
                     placeholder={t('mobileNumber')}
                     {...field}
-                    className='bg-white py-6 ps-6 rounded-[2px]'
+                    className='bg-white lg:py-6 py-5 ps-6 rounded-[2px]'
                   />
                 </FormControl>
                 <FormMessage />
@@ -107,7 +107,7 @@ const UserForm = () => {
                   <Input
                     placeholder={t('email')}
                     {...field}
-                    className='bg-white py-6 ps-6 rounded-[2px]'
+                    className='bg-white lg:py-6 py-5 ps-6 rounded-[2px]'
                   />
                 </FormControl>
                 <FormMessage />
