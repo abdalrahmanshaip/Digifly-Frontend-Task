@@ -5,10 +5,12 @@ import {
   SelectGroup,
   SelectItem,
   SelectTrigger,
-  SelectValue
+  SelectValue,
 } from '@/components/ui/select'
 import { useLocale } from 'next-intl'
 import { useRouter } from 'next/navigation'
+import { en, gb } from '@/assets/svg'
+import Image from 'next/image'
 
 const SwitchLanguage = () => {
   const lang = useLocale()
@@ -24,13 +26,13 @@ const SwitchLanguage = () => {
       aria-label='Select Language'
     >
       <SelectTrigger
-        className='w-[180px]'
+        className='w-[140px]'
         aria-label='Language Selector'
       >
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
-        <SelectGroup>
+        <SelectGroup className='flex-col-reverse'>
           <SelectItem
             title='Language Selector'
             key='en'
@@ -38,7 +40,14 @@ const SwitchLanguage = () => {
             aria-label='Switch to English Language'
             value='en'
           >
-            En
+            <div className='flex gap-x-4'>
+              <Image
+                src={gb}
+                alt={'English flag'}
+                width={20}
+              />
+              <span>English</span>
+            </div>
           </SelectItem>
           <SelectItem
             title='Language Selector'
@@ -47,7 +56,14 @@ const SwitchLanguage = () => {
             aria-label='Switch to Arabic Language'
             value='ar'
           >
-            العربية
+            <div className='flex gap-x-4'>
+              <Image
+                src={en}
+                alt={'Arabic flag'}
+                width={20}
+              />
+              <span>العربية</span>
+            </div>
           </SelectItem>
         </SelectGroup>
       </SelectContent>
