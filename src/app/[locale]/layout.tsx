@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { Poppins, Tajawal } from 'next/font/google'
 import './globals.css'
+import Navbar from '@/components/navbar/Navbar'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -26,11 +27,12 @@ export const metadata: Metadata = {
 // side is the easiest way to get started
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
+  const locale = (await params).locale
   const messages = await getMessages()
 
   return (
@@ -44,6 +46,7 @@ export default async function RootLayout({
         } antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
+          <Navbar />
           {children}
         </NextIntlClientProvider>
       </body>
