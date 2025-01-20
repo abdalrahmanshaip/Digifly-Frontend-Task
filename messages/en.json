@@ -26,6 +26,10 @@
     "title": "Fly Company welcomes you"
   },
 
+  "footer": {
+    "title": "All Rights Reserved © Digifly 2024"
+  },
+
   "contentOne": {
     "title": "Part 1",
     "paraghrap": "Utilize the provided Strapi API from the assessment to post user data into your Redux store. You are required to add one user into the 'users' collection and display this data in a table using a GET request. Ensure the implementation of Redux for state management, including both POST requests for adding a user and GET requests for displaying data in the table."
