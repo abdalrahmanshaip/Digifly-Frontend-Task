@@ -14,11 +14,8 @@
     "button": "Send"
   },
 
-  "table": {
-    "firstName": "First name",
-    "lastName": "Last name",
-    "mobileNumber": "Mobile Number",
-    "email": "Email"
+  "result": {
+    "title": "Results:"
   },
 
   "lableMap": {

@@ -14,12 +14,10 @@
     "button": "إرسال"
   },
 
-  "table": {
-    "firstName": "الإسم الأول",
-    "lastName": "الإسم الأخير",
-    "mobileNumber": "رقم الموبايل",
-    "email": "البريد الإلكترونى"
+  "result": {
+    "title": "النتائج:"
   },
+
   "lableMap": {
     "specialTitle": " ديجى ",
     "title": "شركة  فلاي ترحب بكم"

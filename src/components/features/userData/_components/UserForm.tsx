@@ -30,97 +30,99 @@ const UserForm = () => {
     console.log(value)
   }
   return (
-    <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className='space-y-8'
-      >
-        <div className='flex gap-x-8'>
-          <FormField
-            control={form.control}
-            name='firstname'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className='font-medium text-sm text-our-dark'>
-                  {t('firstName')}
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={t('firstName')}
-                    {...field}
-                    className='bg-white py-6 ps-6 rounded-[2px]'
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='lastname'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className='font-medium text-sm text-our-dark'>
-                  {t('lastName')}
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={t('lastName')}
-                    {...field}
-                    className='bg-white py-6 ps-6 rounded-[2px]'
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
-        <FormField
-          control={form.control}
-          name='mobileNumber'
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className='font-medium text-sm text-our-dark'>
-                {t('mobileNumber')}
-              </FormLabel>
-              <FormControl>
-                <Input
-                  placeholder={t('mobileNumber')}
-                  {...field}
-                  className='bg-white py-6 ps-6 rounded-[2px]'
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name='email'
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className='font-medium text-sm text-our-dark'>
-                {t('email')}
-              </FormLabel>
-              <FormControl>
-                <Input
-                  placeholder={t('email')}
-                  {...field}
-                  className='bg-white py-6 ps-6 rounded-[2px]'
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button
-          type='submit'
-          className='w-full  py-2.5 '
+    <div className='w-full'>
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className='space-y-8'
         >
-          {t('button')}
-        </Button>
-      </form>
-    </Form>
+          <div className='flex gap-x-8 '>
+            <FormField
+              control={form.control}
+              name='firstname'
+              render={({ field }) => (
+                <FormItem className='flex-1'>
+                  <FormLabel className='font-medium text-sm text-our-dark'>
+                    {t('firstName')}
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t('firstName')}
+                      {...field}
+                      className='bg-white py-6 ps-6 rounded-[2px] '
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name='lastname'
+              render={({ field }) => (
+                <FormItem className='flex-1'>
+                  <FormLabel className='font-medium text-sm text-our-dark'>
+                    {t('lastName')}
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t('lastName')}
+                      {...field}
+                      className='bg-white py-6 ps-6 rounded-[2px]'
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <FormField
+            control={form.control}
+            name='mobileNumber'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className='font-medium text-sm text-our-dark'>
+                  {t('mobileNumber')}
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder={t('mobileNumber')}
+                    {...field}
+                    className='bg-white py-6 ps-6 rounded-[2px]'
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name='email'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className='font-medium text-sm text-our-dark'>
+                  {t('email')}
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder={t('email')}
+                    {...field}
+                    className='bg-white py-6 ps-6 rounded-[2px]'
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button
+            type='submit'
+            className='w-full  py-2.5 '
+          >
+            {t('button')}
+          </Button>
+        </form>
+      </Form>
+    </div>
   )
 }
 

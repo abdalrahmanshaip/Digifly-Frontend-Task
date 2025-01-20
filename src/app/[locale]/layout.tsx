@@ -46,7 +46,7 @@ export default async function RootLayout({
           locale === 'ar'
             ? `${tajawal.className} bg-gradient-to-bl`
             : `${poppins.className} bg-gradient-to-br`
-        } antialiased   from-our-purple-200/40 to-our-purple-300/50 h-screen`}
+        } antialiased   from-our-purple-200/40 to-our-purple-300/50`}
       >
         <NextIntlClientProvider messages={messages}>
           <Navbar />
