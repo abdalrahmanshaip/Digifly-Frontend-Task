@@ -26,7 +26,7 @@ const SwitchLanguage = () => {
       aria-label='Select Language'
     >
       <SelectTrigger
-        className='w-[140px]'
+        className='sm:w-[140px] w-16'
         aria-label='Language Selector'
       >
         <SelectValue />
@@ -41,12 +41,13 @@ const SwitchLanguage = () => {
             value='en'
           >
             <div className='flex gap-x-4'>
+              <span className='hidden sm:block w-16'>English</span>
               <Image
                 src={gb}
-                alt={'English flag'}
+                alt={'United Kingdom Flag'}
                 width={20}
+                aria-label='United Kingdom Flag'
               />
-              <span>English</span>
             </div>
           </SelectItem>
           <SelectItem
@@ -57,12 +58,13 @@ const SwitchLanguage = () => {
             value='ar'
           >
             <div className='flex gap-x-4'>
+              <span className='hidden sm:block w-16'>العربية</span>
               <Image
                 src={en}
-                alt={'Arabic flag'}
+                alt={'Egypt Flag'}
+                aria-label='Egypt Flag'
                 width={20}
               />
-              <span>العربية</span>
             </div>
           </SelectItem>
         </SelectGroup>

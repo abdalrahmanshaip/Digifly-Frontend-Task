@@ -10,7 +10,7 @@ const NavLink = () => {
   const pathname = usePathname()
 
   return (
-    <div className='flex md:gap-x-4 justify-center items-center  xl:text-base md:text-sm text-xs  capitalize leading-6 '>
+    <div className='flex md:gap-x-4 justify-center items-center  xl:text-base md:text-sm text-[10px]  capitalize leading-6 text-nowrap'>
       {links.map((label, index) => {
         const href = label === 'home' ? `/${locale}` : `/${locale}/${label}`
         const isActive = pathname === href

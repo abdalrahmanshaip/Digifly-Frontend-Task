@@ -6,8 +6,7 @@ const Logo = () => {
     <Image
       src={LogoImage}
       alt='Digifly logo'
-      width={70}
-      height={56}
+      height={40}
       priority
     />
   )
