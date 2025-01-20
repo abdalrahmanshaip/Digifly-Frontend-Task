@@ -4,6 +4,7 @@ import { getMessages } from 'next-intl/server'
 import { Poppins, Tajawal } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/global/navbar/Navbar'
+import Footer from '@/components/global/footer/Footer'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -50,6 +51,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
