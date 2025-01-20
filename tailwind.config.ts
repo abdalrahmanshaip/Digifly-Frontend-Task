@@ -54,6 +54,8 @@ export default {
         'our-purple': {
           DEFAULT: '#6D5CBC',
           100: '#FCFCFE',
+          200: '#FFF9ED',
+          300: '#93ADE9',
         },
         'our-green': {
           DEFAULT: '#49BD88',
