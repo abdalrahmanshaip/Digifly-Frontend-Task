@@ -6,7 +6,7 @@ import UserTable from './_components/UserTable'
 const UserData = () => {
   const t = useTranslations('contentOne')
   return (
-    <div className='py-16 space-y-20'>
+    <div className='pt-16 space-y-20'>
       <HeaderSections
         headerTitle={t('title')}
         paragraph={t('paragraph')}
