@@ -21,21 +21,17 @@
     "title": "Results:"
   },
 
+  "table": {
+    "noUser": "No user found"
+  },
+
 
   "messages": {
     "success": "Data sent successfully",
     "error": "An error occurred, please try again later"
   },
 
-  "validation": {
-    "FirstName": "First name must be at least 1 characters.",
-    "LastName": "Last name must be at least 1 characters.",
-    "Phone": "Please enter a valid phone number",
-    "Email": {
-      "min": "Please enter a valid email address",
-      "email": "Please enter a valid email address"
-    }
-  },
+
 
   "lableMap": {
     "specialTitle": "Digi ",

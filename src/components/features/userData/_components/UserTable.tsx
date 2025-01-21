@@ -7,12 +7,14 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+
 import { useGetUsersQuery } from '@/state/api/apiSlice'
 import { useTranslations } from 'next-intl'
+import SkeletonTable from './SkeletonTable'
 
 const UserTable = () => {
   const t = useTranslations('')
-  const { data: usersInfo } = useGetUsersQuery()
+  const { data: usersInfo = [], isLoading } = useGetUsersQuery()
   return (
     <div className='w-full space-y-4'>
       <p className='font-bold text-our-purple'>{t('result.title')}</p>
@@ -34,22 +36,35 @@ const UserTable = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {usersInfo?.map((user, index) => (
-            <TableRow key={index}>
-              <TableCell className='xl:text-sm lg:text-xs text-sm font-medium 2xl:p-6 p-3 text-nowrap text-our-dark'>
-                {user.FirstName}
-              </TableCell>
-              <TableCell className='xl:text-sm lg:text-xs text-sm font-medium 2xl:p-6 p-3 text-nowrap text-our-dark'>
-                {user.LastName}
-              </TableCell>
-              <TableCell className='xl:text-sm lg:text-xs text-sm font-medium 2xl:p-6 p-3 text-nowrap text-our-dark'>
-                {user.Phone}
-              </TableCell>
-              <TableCell className='xl:text-sm lg:text-xs text-sm font-medium 2xl:p-6 p-3 text-nowrap text-our-dark'>
-                {user.Email}
+          {isLoading ? (
+            <SkeletonTable />
+          ) : usersInfo && usersInfo.length > 0 ? (
+            usersInfo.map((user, index) => (
+              <TableRow key={index}>
+                <TableCell className='xl:text-sm lg:text-xs text-sm font-medium 2xl:p-6 p-3 text-nowrap text-our-dark'>
+                  {user.FirstName}
+                </TableCell>
+                <TableCell className='xl:text-sm lg:text-xs text-sm font-medium 2xl:p-6 p-3 text-nowrap text-our-dark'>
+                  {user.LastName}
+                </TableCell>
+                <TableCell className='xl:text-sm lg:text-xs text-sm font-medium 2xl:p-6 p-3 text-nowrap text-our-dark'>
+                  {user.Phone}
+                </TableCell>
+                <TableCell className='xl:text-sm lg:text-xs text-sm font-medium 2xl:p-6 p-3 text-nowrap text-our-dark'>
+                  {user.Email}
+                </TableCell>
+              </TableRow>
+            ))
+          ) : (
+            <TableRow>
+              <TableCell
+                className='xl:text-sm lg:text-xs text-sm font-medium text-our-dark/50 text-center 2xl:p-6 p-3'
+                colSpan={4}
+              >
+                {t('table.noUser')}
               </TableCell>
             </TableRow>
-          ))}
+          )}
         </TableBody>
       </Table>
     </div>
