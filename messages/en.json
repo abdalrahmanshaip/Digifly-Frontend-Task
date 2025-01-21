@@ -35,7 +35,8 @@
 
   "lableMap": {
     "specialTitle": "Digi ",
-    "title": "Fly Company welcomes you"
+    "firstTitle": "Fly Company",
+    "secTitle": " welcomes you"
   },
 
   "footer": {

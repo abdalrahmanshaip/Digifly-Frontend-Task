@@ -19,6 +19,31 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.leaflet-container {
+  @apply h-[60vh] border-none;
+}
+
+.leaflet-bottom.leaflet-left {
+  @apply !blur-3xl;
+}
+
+.leaflet-control-attribution {
+  @apply !hidden;
+}
+
+.leaflet-popup-content-wrapper {
+  @apply !bg-our-purple !rounded-lg !w-60;
+}
+.leaflet-popup-tip {
+  @apply !bg-our-purple !w-5 !h-6 !left-10;
+}
+.leaflet-popup.leaflet-zoom-animated {
+  @apply left-[-73px];
+}
+.leaflet-bar {
+  @apply !hidden;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
