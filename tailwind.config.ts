@@ -60,6 +60,15 @@ export default {
         'our-green': {
           DEFAULT: '#49BD88',
         },
+        'our-dark': {
+          DEFAULT: '#1A1A1A',
+          100: '#666666',
+          200: '#999999'
+        },
+        'our-white': {
+          DEFAULT: '#FFFFFF99',
+          100: '#E5E5E5'
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',

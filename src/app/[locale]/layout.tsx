@@ -3,7 +3,10 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { Poppins, Tajawal } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/navbar/Navbar'
+import Navbar from '@/components/global/navbar/Navbar'
+import Footer from '@/components/global/footer/Footer'
+import ReduxProvider from './ReduxProvider'
+import { Toaster } from 'sonner'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -42,12 +45,30 @@ export default async function RootLayout({
     >
       <body
         className={`${
-          locale === 'ar' ? `${tajawal.className} bg-gradient-to-bl` : `${poppins.className} bg-gradient-to-br`
-        } antialiased   from-our-purple-200/40 to-our-purple-300/50 h-screen`}
+          locale === 'ar'
+            ? `${tajawal.className} bg-gradient-to-bl`
+            : `${poppins.className} bg-gradient-to-br`
+        } antialiased   from-our-purple-200/40 to-our-purple-300/50`}
       >
         <NextIntlClientProvider messages={messages}>
           <Navbar />
-          {children}
+          <ReduxProvider>
+            {children}
+            <Toaster
+              richColors
+              toastOptions={{
+                classNames: {
+                  error: 'bg-red-400',
+                  success: 'bg-our-green',
+                  warning: 'text-yellow-400',
+                  info: 'bg-blue-400',
+                },
+              }}
+              dir={locale === 'ar' ? 'rtl' : 'ltr'}
+              position={locale === 'ar' ? 'bottom-left' : 'bottom-right'}
+            />
+          </ReduxProvider>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
