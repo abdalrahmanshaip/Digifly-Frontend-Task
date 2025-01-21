@@ -144,6 +144,7 @@ const UserForm = () => {
             type='submit'
             className='w-full py-2.5'
             aria-label={t('button.send')}
+            disabled={form.formState.isSubmitting}
           >
             {form.formState.isSubmitting ? (
               <div className='flex gap-3'>
