@@ -1,4 +1,4 @@
-import { Map, UserData } from "@/components/features"
+import { Map, TextEditor, UserData } from "@/components/features"
 
 
 const HomePage = () => {
@@ -6,6 +6,7 @@ const HomePage = () => {
     <div className="space-y-60 my-20">
       <UserData />
       <Map />
+      <TextEditor />
     </div>
   )
 }
