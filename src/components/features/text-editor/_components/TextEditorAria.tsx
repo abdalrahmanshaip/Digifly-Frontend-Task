@@ -11,55 +11,61 @@ import {
 } from 'lucide-react'
 import ButtonItem from './ButtonItem'
 import SelectFontFamily from './SelectFontFamily'
+import { useTranslations } from 'next-intl'
+import { useMemo } from 'react'
 
 const TextEditorAria = () => {
-  const textEditorProperties = [
-    {
-      name: 'undo',
-      icon: Undo,
-      exeCcommandAction: 'undo',
-    },
-    {
-      name: 'redo',
-      icon: Redo,
-      exeCcommandAction: 'redo',
-    },
-    {
-      name: 'Bold',
-      icon: Bold,
-      exeCcommandAction: 'Bold',
-    },
-    {
-      name: 'Align Right',
-      icon: AlignRight,
-      exeCcommandAction: 'JustifyRight',
-    },
-    {
-      name: 'Align Center',
-      icon: AlignCenter,
-      exeCcommandAction: 'JustifyCenter',
-    },
-    {
-      name: 'Align Left',
-      icon: AlignLeft,
-      exeCcommandAction: 'JustifyLeft',
-    },
-    {
-      name: 'Underline',
-      icon: Underline,
-      exeCcommandAction: 'underline',
-    },
-    {
-      name: 'Italic',
-      icon: Italic,
-      exeCcommandAction: 'italic',
-    },
-    {
-      name: 'Strike Through',
-      icon: Strikethrough,
-      exeCcommandAction: 'strikeThrough',
-    },
-  ]
+  const t = useTranslations('textEditor')
+  const textEditorProperties = useMemo(
+    () => [
+      {
+        name: t('undo'),
+        icon: Undo,
+        exeCcommandAction: 'undo',
+      },
+      {
+        name: t('redo'),
+        icon: Redo,
+        exeCcommandAction: 'redo',
+      },
+      {
+        name: t('bold'),
+        icon: Bold,
+        exeCcommandAction: 'Bold',
+      },
+      {
+        name: t('alignRight'),
+        icon: AlignRight,
+        exeCcommandAction: 'JustifyRight',
+      },
+      {
+        name: t('alignCenter'),
+        icon: AlignCenter,
+        exeCcommandAction: 'JustifyCenter',
+      },
+      {
+        name: t('alignLeft'),
+        icon: AlignLeft,
+        exeCcommandAction: 'JustifyLeft',
+      },
+      {
+        name: t('underline'),
+        icon: Underline,
+        exeCcommandAction: 'underline',
+      },
+      {
+        name: t('italic'),
+        icon: Italic,
+        exeCcommandAction: 'italic',
+      },
+      {
+        name: t('strikeThrough'),
+        icon: Strikethrough,
+        exeCcommandAction: 'strikeThrough',
+      },
+    ],
+    [t]
+  )
   const handleAction = (command: string) => {
     document.execCommand(command, false, '')
   }

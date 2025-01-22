@@ -6,13 +6,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { useTranslations } from 'next-intl'
 const SelectFontFamily = () => {
+  const t = useTranslations('textEditor')
   return (
     <Select
       onValueChange={(value) => document.execCommand('fontName', false, value)}
     >
       <SelectTrigger className='w-[180px] h-full rounded-none border-none focus:ring-0 py-4 px-6 border-our-purple/10'>
-        <SelectValue placeholder='Select Font Family' />
+        <SelectValue placeholder={t('fontFamily')} />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>

@@ -30,7 +30,18 @@
     "error": "حدث خطأ، يرجى المحاولة مرة أخرى لاحقاً"
   },
 
-
+  "textEditor": {
+    "fontFamily": "حدد نوع الخط",
+    "undo": "تراجع",
+    "redo": "إعادة",
+    "bold": "عريض",
+    "alignRight": "محاذاة لليمين",
+    "alignCenter": "محاذاة للوسط",
+    "alignLeft": "محاذاة لليسار",
+    "underline": "تحته خط",
+    "italic": "مائل",
+    "strikeThrough": "مشطوب"
+  },
 
   "footer": {
     "title": "جميع الحقوق محفوظة © ديجي فلاي 2024"
