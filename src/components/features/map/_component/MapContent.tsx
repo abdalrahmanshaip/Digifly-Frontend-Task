@@ -1,18 +1,21 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
-import { MapContainer, Marker, TileLayer } from 'react-leaflet'
+import 'leaflet-defaulticon-compatibility'
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
+import 'leaflet/dist/leaflet.css'
 
 import L from 'leaflet'
-import icon from 'leaflet/dist/images/marker-icon.png'
-import iconShadow from 'leaflet/dist/images/marker-shadow.png'
-import 'leaflet/dist/leaflet.css'
+import { MapContainer, Marker, TileLayer } from 'react-leaflet'
 import PopupMessage from './PopupMessage'
 
+const markerIcon = new L.Icon({
+  iconUrl: '/map-marker.png',
+  iconSize: [25, 25],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+})
+
 const MapContent = () => {
-  const DefaultIcon = L.icon({
-    iconUrl: icon as any,
-    shadowUrl: iconShadow as any,
-  })
   return (
     <MapContainer
       center={[30.061736656473236, 31.336938759513913]}
@@ -25,7 +28,7 @@ const MapContent = () => {
       />
       <Marker
         position={[30.061736656473236, 31.336938759513913]}
-        icon={DefaultIcon}
+        icon={markerIcon}
       >
         <PopupMessage />
       </Marker>
