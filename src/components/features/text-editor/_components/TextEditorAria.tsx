@@ -70,8 +70,8 @@ const TextEditorAria = () => {
     document.execCommand(command, false, '')
   }
   return (
-    <div className='border border-gray-300 rounded-sm min-h-80 focus:outline-none bg-our-purple-100 overflow-hidden'>
-      <div className='flex items-center bg-our-purple-400 border-b border-our-purple/10'>
+    <div className='border border-gray-300 rounded-sm md:min-h-80 min-h-96 focus:outline-none bg-our-purple-100 overflow-hidden'>
+      <div className='flex flex-wrap  items-center  bg-our-purple-400 border-b border-our-purple/10'>
         <SelectFontFamily />
         {textEditorProperties.map((property) => (
           <ButtonItem
