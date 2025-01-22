@@ -50,12 +50,25 @@ export default {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
-				// Colors of website
+        // Colors of website
         'our-purple': {
           DEFAULT: '#6D5CBC',
+          100: '#FCFCFE',
+          200: '#FFF9ED',
+          300: '#93ADE9',
+          400: '#F8F7FC',
         },
         'our-green': {
-          DEFAULT: '#6D5CBC',
+          DEFAULT: '#49BD88',
+        },
+        'our-dark': {
+          DEFAULT: '#1A1A1A',
+          100: '#666666',
+          200: '#999999',
+        },
+        'our-white': {
+          DEFAULT: '#FFFFFF99',
+          100: '#E5E5E5',
         },
       },
       borderRadius: {
