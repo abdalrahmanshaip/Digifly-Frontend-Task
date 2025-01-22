@@ -1,4 +1,8 @@
+'use client'
+import dynamic from 'next/dynamic'
 import UserData from './userData/UserData'
-import Map from './map/Map'
+
+const Map = dynamic(() => import('./map/Map'), { ssr: false })
 
 export { Map, UserData }
+
