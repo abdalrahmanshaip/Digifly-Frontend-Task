@@ -47,19 +47,49 @@ The website is designed to be fully **responsive** across all screen sizes, ensu
 
 ## Getting Started
 
-## Installation
+Follow these steps to get your development environment set up:
 
-To run the project locally, follow these steps:
+1. **Clone the repository**
 
-1. **Clone the repository**:
+   Open your terminal and run the following command:
 
-   ```bash
-   git clone https://github.com/abdalrahmanshaip/digifly-frontend.git
-   
-   cd digifly-frontend
-   
+   ```
+   git clone https://github.com/abdalrahmanshaip/Digifly-Frontend-Task.git
+   ```
+
+2. **Navigate to the project folder**
+
+   Change into the project directory:
+
+   ```
+   cd Digifly-Frontend-Task
+   ```
+
+3. **Install dependencies**
+
+   Install the project dependencies using npm:
+
+   ```
    npm install
-   
-   npm run dev
+   ```
 
+4. **Open the project in your code editor**
+
+   If you're using Visual Studio Code, you can open the project with:
+
+   ```
+   code .
+   ```
+
+   Alternatively, you can open the project folder in your preferred code editor.
+
+5. **Run the development server**
+
+   Start the development server with:
+
+   ```
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
