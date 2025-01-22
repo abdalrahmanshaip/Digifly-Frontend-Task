@@ -25,15 +25,23 @@
     "noUser": "No user found"
   },
 
-
   "messages": {
     "success": "Data sent successfully",
     "error": "An error occurred, please try again later"
   },
 
-
-
-
+  "textEditor": {
+    "fontFamily": "Select Font Family",
+    "undo": "Undo",
+    "redo": "Redo",
+    "bold": "Bold",
+    "alignRight": "Align Right",
+    "alignCenter": "Align Center",
+    "alignLeft": "Align Left",
+    "underline": "Underline",
+    "italic": "Italic",
+    "strikeThrough": "Strike Through"
+  },
 
   "footer": {
     "title": "All Rights Reserved © Digifly 2024"
